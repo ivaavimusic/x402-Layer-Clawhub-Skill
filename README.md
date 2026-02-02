@@ -68,6 +68,8 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `discover_marketplace.py` | Browse marketplace |
 | `create_endpoint.py` | Deploy monetized endpoint ($5) |
 | `manage_endpoint.py` | View/update endpoints |
+
+> **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
 | `topup_endpoint.py` | Recharge endpoint credits |
 | `list_on_marketplace.py` | List/unlist from marketplace |
 | `consume_product.py` | Purchase digital products |
