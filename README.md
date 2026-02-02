@@ -2,8 +2,9 @@
 
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
-[![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/skills/x402-layer)
+[![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
 [![Version](https://img.shields.io/badge/version-1.0.0-green)](./SKILL.md)
+[![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
 
@@ -21,8 +22,10 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 
 ### ClawHub (Recommended)
 ```bash
-clawhub install x402-layer
+clawhub install ivaavimusic/x402-layer
 ```
+
+🦀 **[View on ClawHub →](https://clawhub.ai/ivaavimusic/x402-layer)**
 
 ### Self-Hosted
 ```bash
@@ -68,6 +71,17 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `topup_endpoint.py` | Recharge endpoint credits |
 | `list_on_marketplace.py` | List/unlist from marketplace |
 | `consume_product.py` | Purchase digital products |
+
+## Tags
+
+`web3` `payments` `api` `usdc` `base` `solana` `agentic` `monetization` `marketplace` `credits` `x402` `x402-protocol` `x402-singularity-layer` `SGL`
+
+## Resources
+
+- 🦀 **ClawHub:** [clawhub.ai/ivaavimusic/x402-layer](https://clawhub.ai/ivaavimusic/x402-layer)
+- 📖 **Documentation:** [studio.x402layer.cc/docs](https://studio.x402layer.cc/docs/agentic-access/openclaw-skill)
+- 🌐 **x402 Studio:** [studio.x402layer.cc](https://studio.x402layer.cc)
+- 🐦 **OpenClaw:** [@openclaw](https://x.com/openclaw)
 
 ## License
 

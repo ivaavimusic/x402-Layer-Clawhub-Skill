@@ -306,6 +306,7 @@ Uses `VersionedTransaction` with `MessageV0`:
 
 ## Resources
 
+- 🦀 **ClawHub:** [clawhub.ai/ivaavimusic/x402-layer](https://clawhub.ai/ivaavimusic/x402-layer)
 - 📖 **Documentation:** [studio.x402layer.cc/docs/agentic-access/openclaw-skill](https://studio.x402layer.cc/docs/agentic-access/openclaw-skill)
 - 💻 **GitHub:** [github.com/ivaavimusic/x402-Layer-Clawhub-Skill](https://github.com/ivaavimusic/x402-Layer-Clawhub-Skill)
 - 🐦 **OpenClaw:** [x.com/openclaw](https://x.com/openclaw)
