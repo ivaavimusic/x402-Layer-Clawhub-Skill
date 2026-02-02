@@ -307,7 +307,7 @@ Uses `VersionedTransaction` with `MessageV0`:
 ## Resources
 
 - 📖 **Documentation:** [studio.x402layer.cc/docs/agentic-access/openclaw-skill](https://studio.x402layer.cc/docs/agentic-access/openclaw-skill)
-- 💻 **GitHub Docs:** [github.com/ivaavimusic/SGL_DOCS_2025](https://github.com/ivaavimusic/SGL_DOCS_2025)
+- 💻 **GitHub:** [github.com/ivaavimusic/x402-Layer-Clawhub-Skill](https://github.com/ivaavimusic/x402-Layer-Clawhub-Skill)
 - 🐦 **OpenClaw:** [x.com/openclaw](https://x.com/openclaw)
 - 🌐 **x402 Studio:** [studio.x402layer.cc](https://studio.x402layer.cc)
 
