@@ -18,7 +18,7 @@ Usage:
 Categories: ai, data, finance, utility, social, gaming
 
 Environment Variables:
-    WALLET_ADDRESS - Your wallet address (must match endpoint owner)
+    X_API_KEY - Your endpoint API key (required)
 """
 
 import os
