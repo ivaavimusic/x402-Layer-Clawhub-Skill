@@ -2,6 +2,26 @@
 
 All notable changes to x402-layer skill will be documented in this file.
 
+## [1.1.1] - 2026-02-14
+
+### Bug Fixes
+
+- **Fixed AWAL endpoint creation**: Removed unsupported `-h` header flag from AWAL CLI calls
+  - AWAL `pay` command does not support custom headers
+  - The `-h` flag was being interpreted as `--help`, causing endpoint creation to fail
+  - Wallet address is passed in POST body data, so headers are not needed
+- **Added missing AWAL support scripts** to GitHub repo:
+  - `awal_bridge.py` - Core AWAL payment functionality
+  - `awal_cli.py` - AWAL CLI wrapper
+  - `wallet_signing.py` - Wallet signing with `is_awal_mode()`
+  - `network_selection.py` - Network/auth selection logic
+  - `solana_signing.py` - Solana signing utilities
+
+### Files Changed
+
+- `scripts/awal_bridge.py` - Fixed header handling
+- `SKILL.md` - Version bump to 1.1.1
+
 ## [1.1.0] - 2026-02-14
 
 ### Coinbase Agentic Wallet (AWAL) Integration
