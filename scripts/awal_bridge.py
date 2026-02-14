@@ -106,8 +106,8 @@ def awal_pay_url(
         args += ["-d", json.dumps(data)]
     if query is not None:
         args += ["-q", json.dumps(query)]
-    if headers is not None:
-        args += ["-h", json.dumps(headers)]
+    # NOTE: AWAL pay command does not support custom headers
+    # The wallet address is embedded in the EIP-712 signature and extracted by the worker
     if max_amount is not None:
         args += ["--max-amount", str(max_amount)]
 
