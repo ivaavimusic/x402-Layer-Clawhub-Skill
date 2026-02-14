@@ -97,17 +97,17 @@ def awal_pay_url(
     headers: Optional[Dict[str, Any]] = None,
     max_amount: Optional[int] = None,
 ) -> Dict[str, Any]:
-    base_url, path = _split_url(url)
-
-    args: List[str] = ["pay", base_url, path]
+    # AWAL x402 pay expects the full URL, not split
+    args: List[str] = ["x402", "pay", url]
     if method and method.upper() != "GET":
         args += ["-X", method.upper()]
     if data is not None:
         args += ["-d", json.dumps(data)]
     if query is not None:
         args += ["-q", json.dumps(query)]
-    # NOTE: AWAL pay command does not support custom headers
-    # The wallet address is embedded in the EIP-712 signature and extracted by the worker
+    # NOTE: AWAL x402 pay supports --headers flag for custom headers
+    if headers is not None:
+        args += ["-h", json.dumps(headers)]
     if max_amount is not None:
         args += ["--max-amount", str(max_amount)]
 
