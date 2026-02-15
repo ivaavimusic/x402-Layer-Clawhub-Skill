@@ -1,6 +1,6 @@
 ---
 name: x402-layer
-version: 1.1.3
+version: 1.1.2
 description: |
   This skill should be used when the user asks to "create x402 endpoint",
   "deploy monetized API", "pay for API with USDC", "check x402 credits",
