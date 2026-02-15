@@ -91,6 +91,16 @@ MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
 
+### v1.1.1
+- **Fix:** AWAL CLI command updated from `pay` to `x402 pay`
+- **Fix:** AWAL URL handling now passes full URL
+- **Fix:** Backend includes EIP-712 domain params for AWAL compatibility
+
+### v1.1.0
+- **Feature:** Coinbase Agentic Wallet (AWAL) integration for Base payments
+- **Feature:** No private key mode using AWAL
+- **Feature:** Auto-detection of authentication mode
+
 ### v1.0.1
 - **Security:** Added strict `x-api-key` verification for marketplace listing/unlisting
 - **Docs:** Updated `README.md` with critical API Key security note
