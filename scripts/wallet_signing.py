@@ -86,7 +86,11 @@ class PaymentSigner:
             {"TransferWithAuthorization": typed_data["types"]["TransferWithAuthorization"]},
             typed_data["message"],
         )
-        return signed.signature.hex()
+        sig = signed.signature.hex()
+        # Ensure 0x prefix for EVM compatibility
+        if not sig.startswith("0x"):
+            sig = "0x" + sig
+        return sig
 
     def create_x402_payment_payload(
         self,
