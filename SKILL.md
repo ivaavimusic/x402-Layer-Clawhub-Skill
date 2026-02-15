@@ -19,8 +19,21 @@ metadata:
       bins:
         - python3
       env:
-        # Only truly required var - wallet address for all operations
+        # Core credentials (required for payments)
         - WALLET_ADDRESS
+        - PRIVATE_KEY
+        # Solana payments (required for Solana network)
+        - SOLANA_SECRET_KEY
+        # Provider operations (required for endpoint management)
+        - X_API_KEY
+        - API_KEY
+        # AWAL mode (optional - for Coinbase Agentic Wallet)
+        - X402_USE_AWAL
+        - X402_AUTH_MODE
+        - X402_PREFER_NETWORK
+        - AWAL_PACKAGE
+        - AWAL_BIN
+        - AWAL_FORCE_NPX
 allowed-tools:
   - Read
   - Write
