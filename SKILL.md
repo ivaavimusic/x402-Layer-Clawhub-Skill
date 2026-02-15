@@ -19,8 +19,9 @@ metadata:
       bins:
         - python3
       env:
-        # Only truly required var - wallet address for all operations
+        # Core credentials (required for PK mode payments)
         - WALLET_ADDRESS
+        - PRIVATE_KEY
 allowed-tools:
   - Read
   - Write
