@@ -1,6 +1,6 @@
 ---
 name: x402-layer
-version: 1.1.2
+version: 1.1.3
 description: |
   This skill should be used when the user asks to "create x402 endpoint",
   "deploy monetized API", "pay for API with USDC", "check x402 credits",
@@ -19,21 +19,8 @@ metadata:
       bins:
         - python3
       env:
-        # Core credentials (required for payments)
+        # Only truly required var - wallet address for all operations
         - WALLET_ADDRESS
-        - PRIVATE_KEY
-        # Solana payments (required for Solana network)
-        - SOLANA_SECRET_KEY
-        # Provider operations (required for endpoint management)
-        - X_API_KEY
-        - API_KEY
-        # AWAL mode (optional - for Coinbase Agentic Wallet)
-        - X402_USE_AWAL
-        - X402_AUTH_MODE
-        - X402_PREFER_NETWORK
-        - AWAL_PACKAGE
-        - AWAL_BIN
-        - AWAL_FORCE_NPX
 allowed-tools:
   - Read
   - Write
