@@ -91,6 +91,8 @@ MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
 ### v1.1.2
+- **Security:** Added input validation to awal_bridge.py to prevent shell injection
+- **Security:** Added filename sanitization to consume_product.py to prevent path traversal
 - **Fix:** Ensure 0x prefix on EVM signatures for compatibility
 
 

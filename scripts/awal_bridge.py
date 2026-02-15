@@ -13,6 +13,19 @@ from urllib.parse import urlparse
 
 DEFAULT_AWAL_PACKAGE = "awal@1.0.0"
 
+# Shell metacharacters to reject for security
+_SHELL_DANGEROUS_CHARS = set(';&|`$()<>!\n\r')
+
+
+def _validate_safe_string(value: str) -> str:
+    """Validate string doesn't contain shell metacharacters."""
+    if not isinstance(value, str):
+        return value
+    for char in _SHELL_DANGEROUS_CHARS:
+        if char in value:
+            raise ValueError(f"Unsafe character detected in input")
+    return value
+
 
 def build_awal_command(args: List[str]) -> List[str]:
     explicit_bin = os.getenv("AWAL_BIN", "").strip()
@@ -28,6 +41,11 @@ def build_awal_command(args: List[str]) -> List[str]:
 
 
 def run_awal(args: List[str], timeout: int = 180) -> Dict[str, Any]:
+    # Validate all string arguments for security
+    for arg in args:
+        if isinstance(arg, str):
+            _validate_safe_string(arg)
+
     cmd = build_awal_command(args)
     proc = subprocess.run(cmd, text=True, capture_output=True, timeout=timeout)
     return {
