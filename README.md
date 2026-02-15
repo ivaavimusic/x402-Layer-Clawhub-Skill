@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.1.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.2-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -90,6 +90,9 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.1.2
+- **Fix:** Ensure 0x prefix on EVM signatures for compatibility
+
 
 ### v1.1.1
 - **Fix:** AWAL CLI command updated from `pay` to `x402 pay`
