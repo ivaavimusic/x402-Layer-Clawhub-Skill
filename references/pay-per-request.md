@@ -6,7 +6,17 @@ Pay-Per-Request uses the HTTP 402 Payment Required status code to negotiate paym
 
 **x402 uses EIP-712 typed data signatures, NOT raw ERC20 transfers.**
 
-The facilitator (CDP) validates and broadcasts the payment. You only need to sign a permit.
+The facilitator validates and broadcasts the payment. You only need to sign a permit.
+
+## Coinbase Agentic Wallet (AWAL) Shortcut
+
+If you do not want local private-key signing, use AWAL:
+
+```bash
+python {baseDir}/scripts/awal_cli.py run auth login agent@example.com
+python {baseDir}/scripts/awal_cli.py run auth verify <flow_id> <otp>
+python {baseDir}/scripts/awal_cli.py pay-url https://api.x402layer.cc/e/my-endpoint
+```
 
 ---
 
@@ -166,4 +176,3 @@ import base64
 | "Nonce already used" | Replay attack | Generate fresh random nonce |
 | "validBefore expired" | Timeout | Set validBefore = now + 3600 |
 | "Wrong domain" | Bad name/version | Use "USD Coin" v2 for Base USDC |
-
