@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.2.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.2.1-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -92,6 +92,10 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.2.1
+- **Updated:** Webhook support expanded to 4 event types (payment.succeeded, credits.depleted, credits.low, credits.recharged)
+- **Updated:** SKILL.md with event type table and example payloads
+
 ### v1.2.0
 - **Feature:** Endpoint-level webhooks — receive `payment.succeeded` events at your own HTTPS URL
 - **New Script:** `manage_webhook.py` — set, update, or remove webhooks via API
