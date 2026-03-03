@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.2.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.3.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -67,7 +67,7 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `check_credits.py` | Check credit balance |
 | `recharge_credits.py` | Buy credit packs |
 | `discover_marketplace.py` | Browse marketplace |
-| `create_endpoint.py` | Deploy monetized endpoint ($5) |
+| `create_endpoint.py` | Deploy monetized endpoint ($1) |
 | `manage_endpoint.py` | View/update endpoints |
 
 > **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
@@ -75,6 +75,8 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `list_on_marketplace.py` | List/unlist from marketplace |
 | `consume_product.py` | Purchase digital products |
 | `manage_webhook.py` | Set/update/remove endpoint webhooks |
+| `register_agent.py` | Register ERC-8004 / Solana-8004 agent |
+| `submit_feedback.py` | Submit on-chain reputation feedback |
 
 ## Tags
 
@@ -92,6 +94,13 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.3.0
+- **Feature:** Added `register_agent.py` for worker-based ERC-8004/Solana-8004 registration
+- **Feature:** Added `submit_feedback.py` for worker-based on-chain reputation feedback
+- **Security:** AWAL wrapper hardening (`awal_cli.py` now uses validated `awal_bridge.py` path)
+- **Security:** Disabled implicit `npx` fallback by default; require explicit `AWAL_ALLOW_NPX=1`
+- **Metadata:** Tightened required env declarations to reduce false-positive security flags
+
 ### v1.2.1
 - **Updated:** Webhook support expanded to 4 event types (payment.succeeded, credits.depleted, credits.low, credits.recharged)
 - **Updated:** SKILL.md with event type table and example payloads
