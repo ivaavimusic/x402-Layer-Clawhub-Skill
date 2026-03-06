@@ -69,14 +69,15 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `discover_marketplace.py` | Browse marketplace |
 | `create_endpoint.py` | Deploy monetized endpoint ($1) |
 | `manage_endpoint.py` | View/update endpoints |
-
-> **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
 | `topup_endpoint.py` | Recharge endpoint credits |
 | `list_on_marketplace.py` | List/unlist from marketplace |
 | `consume_product.py` | Purchase digital products |
 | `manage_webhook.py` | Set/update/remove endpoint webhooks |
+| `verify_webhook_payment.js` | Verify webhook signature + payment receipt genuineness using x402sgl |
 | `register_agent.py` | Register ERC-8004 / Solana-8004 agent |
 | `submit_feedback.py` | Submit on-chain reputation feedback |
+
+> **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
 
 ## Tags
 
@@ -97,6 +98,9 @@ MIT © [EventHorizon Labs](https://ehlabs.xyz)
 ### v1.3.0
 - **Feature:** Added `register_agent.py` for worker-based ERC-8004/Solana-8004 registration
 - **Feature:** Added `submit_feedback.py` for worker-based on-chain reputation feedback
+- **Feature:** Added `verify_webhook_payment.js` for webhook payment genuineness verification via `x402sgl`
+- **DX:** Refactored `SKILL.md` with an intent router + reference-first structure to keep one skill comprehensive but easier to navigate
+- **DX:** Added dedicated references for webhook verification and ERC-8004/Solana-8004 registry/reputation workflows
 - **Security:** AWAL wrapper hardening (`awal_cli.py` now uses validated `awal_bridge.py` path)
 - **Security:** Disabled implicit `npx` fallback by default; require explicit `AWAL_ALLOW_NPX=1`
 - **Metadata:** Tightened required env declarations to reduce false-positive security flags
