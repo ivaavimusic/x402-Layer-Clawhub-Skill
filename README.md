@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.3.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.3.1-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -95,6 +95,12 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.3.1
+- **Security:** Removed implicit `.env` loading from skill scripts; credentials are read only from explicit process env
+- **Security:** Removed AWAL `npx` fallback; AWAL now requires local `awal` binary or `AWAL_BIN`
+- **Metadata:** Aligned required env declarations with sensitive vars actually used (`PRIVATE_KEY`, `SOLANA_SECRET_KEY`, worker registration/feedback keys)
+- **Deps:** Removed `python-dotenv` from requirements
+
 ### v1.3.0
 - **Feature:** Added `register_agent.py` for worker-based ERC-8004/Solana-8004 registration
 - **Feature:** Added `submit_feedback.py` for worker-based on-chain reputation feedback
@@ -102,7 +108,7 @@ MIT © [EventHorizon Labs](https://ehlabs.xyz)
 - **DX:** Refactored `SKILL.md` with an intent router + reference-first structure to keep one skill comprehensive but easier to navigate
 - **DX:** Added dedicated references for webhook verification and ERC-8004/Solana-8004 registry/reputation workflows
 - **Security:** AWAL wrapper hardening (`awal_cli.py` now uses validated `awal_bridge.py` path)
-- **Security:** Disabled implicit `npx` fallback by default; require explicit `AWAL_ALLOW_NPX=1`
+- **Security:** AWAL execution hardened (no implicit remote package execution in default flow)
 - **Metadata:** Tightened required env declarations to reduce false-positive security flags
 
 ### v1.2.1
