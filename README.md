@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.3.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.3.2-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -73,7 +73,7 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `list_on_marketplace.py` | List/unlist from marketplace |
 | `consume_product.py` | Purchase digital products |
 | `manage_webhook.py` | Set/update/remove endpoint webhooks |
-| `verify_webhook_payment.js` | Verify webhook signature + payment receipt genuineness using x402sgl |
+| `verify_webhook_payment.py` | Verify webhook signature + payment receipt genuineness (PyJWT/JWKS) |
 | `register_agent.py` | Register ERC-8004 / Solana-8004 agent |
 | `submit_feedback.py` | Submit on-chain reputation feedback |
 
@@ -95,6 +95,13 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.3.2
+- **Stack:** Ported `verify_webhook_payment.js` → `verify_webhook_payment.py` — all 20 scripts are now pure Python
+- **Stack:** Removed `node`/`npm`/`x402sgl` dependency; receipt JWT verified with PyJWT + JWKS
+- **Security:** Removed `WORKER_REGISTRATION_API_KEY` fallback in `submit_feedback.py` (least-privilege)
+- **Metadata:** Removed `PRIVATE_KEY`/`SOLANA_SECRET_KEY` from `requires.env` (only needed for specific payment modes)
+- **Worker:** Synced embedded `SKILL_MD` with source, added env-only security note
+
 ### v1.3.1
 - **Security:** Removed implicit `.env` loading from skill scripts; credentials are read only from explicit process env
 - **Security:** Removed AWAL `npx` fallback; AWAL now requires local `awal` binary or `AWAL_BIN`
