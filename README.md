@@ -2,7 +2,7 @@
 
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
-[![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
+[![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
 [![Version](https://img.shields.io/badge/version-1.4.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
@@ -14,7 +14,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 - 🔍 **Discover** services via marketplace
 - 📊 **Manage** endpoints and credits
 - 🔔 **Webhooks** — receive payment notifications
-- 🤖 **Register** ERC-8004 / Solana-8004 agents with wallet-first ownership
+- 🤖 **Register and manage** ERC-8004 / Solana-8004 agents with wallet-first ownership
 
 **Networks:** Base (EVM) • Solana  
 **Currency:** USDC  
@@ -22,17 +22,12 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 
 ## Installation
 
-### ClawHub (Recommended)
-```bash
-clawhub install ivaavimusic/x402-layer
-```
-
-🦀 **[View on ClawHub →](https://clawhub.ai/ivaavimusic/x402-layer)**
-
 ### Self-Hosted
 ```bash
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
+
+> ClawHub Marketplace publication is intentionally deferred while `v1.4.0` finishes dashboard-parity ERC-8004 validation.
 
 ### Manual
 ```bash
@@ -75,7 +70,10 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `consume_product.py` | Purchase digital products |
 | `manage_webhook.py` | Set/update/remove endpoint webhooks |
 | `verify_webhook_payment.py` | Verify webhook signature + payment receipt genuineness (PyJWT/JWKS) |
-| `register_agent.py` | Register ERC-8004 / Solana-8004 agent with wallet-first flow |
+| `register_agent.py` | Register ERC-8004 / Solana-8004 agent with wallet-first flow and rich metadata |
+| `list_my_endpoints.py` | List platform endpoints available for ERC-8004 agent binding |
+| `list_agents.py` | List wallet-owned ERC-8004 / Solana-8004 agents |
+| `update_agent.py` | Update ERC-8004 / Solana-8004 metadata, visibility, and endpoint bindings |
 | `submit_feedback.py` | Submit on-chain reputation feedback |
 
 > **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
@@ -86,7 +84,7 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 
 ## Resources
 
-- 🦀 **ClawHub:** [clawhub.ai/ivaavimusic/x402-layer](https://clawhub.ai/ivaavimusic/x402-layer)
+- 📦 **Skill Manifest:** [api.x402layer.cc/skill/x402-layer](https://api.x402layer.cc/skill/x402-layer)
 - 📖 **Documentation:** [studio.x402layer.cc/docs](https://studio.x402layer.cc/docs/agentic-access/openclaw-skill)
 - 🌐 **x402 Studio:** [studio.x402layer.cc](https://studio.x402layer.cc)
 - 🐦 **OpenClaw:** [@openclaw](https://x.com/openclaw)
@@ -99,6 +97,8 @@ MIT © [EventHorizon Labs](https://ehlabs.xyz)
 ### v1.4.0
 - **ERC-8004:** `register_agent.py` now uses wallet-first challenge/verify plus prepare/finalize registration by default
 - **ERC-8004:** Added local EVM wallet challenge signing support and documented `--legacy` / `X402_ERC8004_LEGACY=1` fallback
+- **ERC-8004:** Added `list_my_endpoints.py`, `list_agents.py`, and `update_agent.py` for full lifecycle discovery and management
+- **ERC-8004:** Registration now supports `image`, `version`, `tags`, `endpointIds`, and `customEndpoints`
 - **Docs:** Synced skill routing, references, README, and install surfaces to the wallet-first agent flow
 
 ### v1.3.3
