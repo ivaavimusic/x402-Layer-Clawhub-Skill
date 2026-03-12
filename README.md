@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![ClawHub](https://img.shields.io/badge/ClawHub-x402--layer-blue)](https://clawhub.ai/ivaavimusic/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.3.3-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.4.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -14,6 +14,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 - 🔍 **Discover** services via marketplace
 - 📊 **Manage** endpoints and credits
 - 🔔 **Webhooks** — receive payment notifications
+- 🤖 **Register** ERC-8004 / Solana-8004 agents with wallet-first ownership
 
 **Networks:** Base (EVM) • Solana  
 **Currency:** USDC  
@@ -74,7 +75,7 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `consume_product.py` | Purchase digital products |
 | `manage_webhook.py` | Set/update/remove endpoint webhooks |
 | `verify_webhook_payment.py` | Verify webhook signature + payment receipt genuineness (PyJWT/JWKS) |
-| `register_agent.py` | Register ERC-8004 / Solana-8004 agent |
+| `register_agent.py` | Register ERC-8004 / Solana-8004 agent with wallet-first flow |
 | `submit_feedback.py` | Submit on-chain reputation feedback |
 
 > **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
@@ -95,6 +96,11 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.4.0
+- **ERC-8004:** `register_agent.py` now uses wallet-first challenge/verify plus prepare/finalize registration by default
+- **ERC-8004:** Added local EVM wallet challenge signing support and documented `--legacy` / `X402_ERC8004_LEGACY=1` fallback
+- **Docs:** Synced skill routing, references, README, and install surfaces to the wallet-first agent flow
+
 ### v1.3.3
 - **Metadata:** Added `PRIVATE_KEY`/`SOLANA_SECRET_KEY` back to `requires.env` (scripts use them; omitting triggered under-declaration warning)
 - **Metadata:** Removed `WORKER_REGISTRATION_API_KEY` from `requires.env` (no script uses it)
