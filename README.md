@@ -16,7 +16,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 - 🔔 **Webhooks** — receive payment notifications
 - 🤖 **Register and manage** ERC-8004 / Solana-8004 agents with wallet-first ownership
 
-**Networks:** Base (EVM) • Solana  
+**Networks:** Base • Ethereum • Polygon • BSC • Monad • Solana  
 **Currency:** USDC  
 **Protocol:** HTTP 402 Payment Required
 
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> ClawHub Marketplace publication is intentionally deferred while `v1.4.0` finishes dashboard-parity ERC-8004 validation.
+> `v1.4.0` ships wallet-first-only ERC-8004 registration, discovery, and management for agents.
 
 ### Manual
 ```bash
@@ -96,7 +96,7 @@ MIT © [EventHorizon Labs](https://ehlabs.xyz)
 ## Changelog
 ### v1.4.0
 - **ERC-8004:** `register_agent.py` now uses wallet-first challenge/verify plus prepare/finalize registration by default
-- **ERC-8004:** Added local EVM wallet challenge signing support and documented `--legacy` / `X402_ERC8004_LEGACY=1` fallback
+- **ERC-8004:** Removed the legacy x402-paid registration fallback; wallet-first is now the only registration path
 - **ERC-8004:** Added `list_my_endpoints.py`, `list_agents.py`, and `update_agent.py` for full lifecycle discovery and management
 - **ERC-8004:** Registration now supports `image`, `version`, `tags`, `endpointIds`, and `customEndpoints`
 - **Docs:** Synced skill routing, references, README, and install surfaces to the wallet-first agent flow
