@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.4.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.5.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.4.0` ships wallet-first-only ERC-8004 registration, discovery, and management for agents.
+> `v1.5.0` adds a first-class payments integration guide, plus the PayAI-safe Solana signer limit used by the current live flow.
 
 ### Manual
 ```bash
@@ -94,6 +94,12 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.5.0
+- **Payments:** Added a first-class "integrate crypto payments into my app/platform" intent to the skill router
+- **Payments:** Added `references/payments-integration.md` covering direct endpoints, credits, products, hosted pages, custom UI, and webhook-backed fulfillment
+- **Solana:** Fixed `solana_signing.py` to cap the exact-payment compute limit at `40000` for the live PayAI-backed flow
+- **Docs:** Refreshed runbooks and payment references so agents can understand the full integration path instead of isolated scripts
+
 ### v1.4.0
 - **ERC-8004:** `register_agent.py` now uses wallet-first challenge/verify plus prepare/finalize registration by default
 - **ERC-8004:** Removed the legacy x402-paid registration fallback; wallet-first is now the only registration path
