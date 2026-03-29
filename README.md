@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.6.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.7.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.6.0` adds AgentKit-aware discovery, optional AgentKit payment flow for verified human-backed agent wallets, and XMTP support guidance for agents.
+> `v1.7.0` adds wallet-signed support APIs, agent-side support thread commands, and XMTP helper scripts on top of AgentKit-aware discovery and payment flow.
 
 ### Manual
 ```bash
@@ -63,6 +63,9 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 | `check_credits.py` | Check credit balance |
 | `recharge_credits.py` | Buy credit packs |
 | `discover_marketplace.py` | Browse marketplace and inspect AgentKit benefits |
+| `support_auth.py` | Authenticate a wallet for support APIs |
+| `support_threads.py` | Open/list/show/close/reopen support threads |
+| `xmtp_support.mjs` | Read/send XMTP support messages and revoke old installations |
 | `create_endpoint.py` | Deploy monetized endpoint ($1) |
 | `manage_endpoint.py` | View/update endpoints |
 | `topup_endpoint.py` | Recharge endpoint credits |
@@ -94,6 +97,12 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.7.0
+- **Support APIs:** Added wallet-signed support authentication for agent wallets
+- **Support Threads:** Added `support_auth.py` and `support_threads.py` for support eligibility and thread management
+- **XMTP:** Added `xmtp_support.mjs` for reading/sending support messages and revoking old installations
+- **Ops:** Added persistent XMTP local database guidance for agent usage
+
 ### v1.6.0
 - **AgentKit:** Added AgentKit-aware Base payment flow in `pay_base.py`
 - **AgentKit:** Added marketplace inspection for verified human-backed agent wallet benefits
