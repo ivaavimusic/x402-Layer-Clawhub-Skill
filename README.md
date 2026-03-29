@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.7.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.8.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.7.0` adds wallet-signed support APIs, agent-side support thread commands, and XMTP helper scripts on top of AgentKit-aware discovery and payment flow.
+> `v1.8.0` adds seller-side endpoint configuration parity for best-fit audience and verified human-backed AgentKit benefits, on top of support/XMTP and AgentKit payment flow.
 
 ### Manual
 ```bash
@@ -97,6 +97,11 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.8.0
+- **Endpoint Creation:** Added `--best-fit`, `--agentkit-benefit`, `--agentkit-discount-percent`, and `--agentkit-free-trial-uses` to `create_endpoint.py`
+- **Endpoint Updates:** `manage_endpoint.py update` now uses real worker PATCH support
+- **Parity:** Worker endpoint APIs now return and persist best-fit audience and verified human-backed AgentKit benefit fields
+
 ### v1.7.0
 - **Support APIs:** Added wallet-signed support authentication for agent wallets
 - **Support Threads:** Added `support_auth.py` and `support_threads.py` for support eligibility and thread management
