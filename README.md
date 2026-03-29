@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.8.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.8.2-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.8.1` fixes direct Base endpoint payments so self-payment is rejected clearly and skill payments use the hosted purchase-path shape.
+> `v1.8.2` removes globally-required secret env declarations from the skill metadata and replaces them with capability-specific guidance.
 
 ### Manual
 ```bash
@@ -38,6 +38,9 @@ pip install -r ~/.agent/skills/x402-layer/requirements.txt
 ## Quick Start
 
 ```bash
+# Read-only discovery needs no secrets:
+python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
+
 # Set up wallet
 export WALLET_ADDRESS="0x..."
 export PRIVATE_KEY="0x..."
@@ -97,6 +100,11 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.8.2
+- **Metadata:** removed globally-required secret env declarations from skill metadata; only runtime binaries remain universally required
+- **Safety:** documented capability-specific environment requirements so users only expose secrets for the runbook they are actually using
+- **Docs:** synced the safer environment guidance across the hosted skill and public documentation
+
 ### v1.8.1
 - fixed direct Base endpoint payments for skill usage by rejecting self-payment early
 - aligned `pay_base.py` with the hosted purchase-path shape using `?action=purchase`
