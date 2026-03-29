@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.5.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.6.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.5.0` adds a first-class payments integration guide, plus the PayAI-safe Solana signer limit used by the current live flow.
+> `v1.6.0` adds AgentKit-aware discovery, optional AgentKit payment flow for verified human-backed agent wallets, and XMTP support guidance for agents.
 
 ### Manual
 ```bash
@@ -57,12 +57,12 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 
 | Script | Purpose |
 |--------|---------|
-| `pay_base.py` | Pay for endpoint on Base network |
+| `pay_base.py` | Pay for endpoint on Base network, with optional AgentKit benefit flow |
 | `pay_solana.py` | Pay for endpoint on Solana network |
 | `consume_credits.py` | Use pre-purchased credits |
 | `check_credits.py` | Check credit balance |
 | `recharge_credits.py` | Buy credit packs |
-| `discover_marketplace.py` | Browse marketplace |
+| `discover_marketplace.py` | Browse marketplace and inspect AgentKit benefits |
 | `create_endpoint.py` | Deploy monetized endpoint ($1) |
 | `manage_endpoint.py` | View/update endpoints |
 | `topup_endpoint.py` | Recharge endpoint credits |
@@ -94,6 +94,12 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.6.0
+- **AgentKit:** Added AgentKit-aware Base payment flow in `pay_base.py`
+- **AgentKit:** Added marketplace inspection for verified human-backed agent wallet benefits
+- **Guidance:** Added modular references for World AgentKit benefits and XMTP support
+- **UX:** Clarified seller-side AgentKit wording so agents understand the benefit applies to verified human-backed agent wallets
+
 ### v1.5.0
 - **Payments:** Added a first-class "integrate crypto payments into my app/platform" intent to the skill router
 - **Payments:** Added `references/payments-integration.md` covering direct endpoints, credits, products, hosted pages, custom UI, and webhook-backed fulfillment
