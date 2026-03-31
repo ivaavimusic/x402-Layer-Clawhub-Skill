@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.8.2-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.9.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.8.2` removes globally-required secret env declarations from the skill metadata and replaces them with capability-specific guidance.
+> `v1.9.0` adds optional Singularity MCP control-plane guidance for PAT-backed dashboard management without making PAT setup globally required.
 
 ### Manual
 ```bash
@@ -50,6 +50,9 @@ python ~/.agent/skills/x402-layer/scripts/pay_base.py https://api.x402layer.cc/e
 
 # Browse marketplace
 python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
+
+# Optional owner-scoped MCP access
+export SINGULARITY_PAT="sgl_pat_..."
 ```
 
 ## Documentation
@@ -100,6 +103,11 @@ python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.9.0
+- **MCP:** added optional PAT-backed Singularity MCP guidance for owner-scoped endpoint, product, and webhook management
+- **Skill Router:** added an MCP-first control-plane route so agents know when to prefer MCP over local scripts
+- **Safety:** kept `SINGULARITY_PAT` optional and out of globally-required install metadata
+
 ### v1.8.2
 - **Metadata:** removed globally-required secret env declarations from skill metadata; only runtime binaries remain universally required
 - **Safety:** documented capability-specific environment requirements so users only expose secrets for the runbook they are actually using
