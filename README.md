@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.9.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.9.1-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.9.0` adds optional Singularity MCP control-plane guidance for PAT-backed dashboard management without making PAT setup globally required.
+> `v1.9.1` hardens the XMTP helper, adds explicit World AgentKit and XMTP runbooks, and keeps optional Singularity MCP guidance in the same install surface.
 
 ### Manual
 ```bash
@@ -103,6 +103,11 @@ export SINGULARITY_PAT="sgl_pat_..."
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.9.1
+- **XMTP:** removed the environment-driven Studio base override from `xmtp_support.mjs`
+- **Runbooks:** added explicit World AgentKit, XMTP support, and MCP owner-scoped examples
+- **Docs:** refreshed stale example versions and aligned helper app version strings
+
 ### v1.9.0
 - **MCP:** added optional PAT-backed Singularity MCP guidance for owner-scoped endpoint, product, and webhook management
 - **Skill Router:** added an MCP-first control-plane route so agents know when to prefer MCP over local scripts
