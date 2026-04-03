@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.10.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.10.1-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.10.0` adds optional OpenWallet / OWS support for pay/discover/sign-message flows while keeping private-key and AWAL flows intact.
+> `v1.10.1` hardens metadata/safety disclosures for credentialed wallet flows and updates the docs link, while keeping all x402-layer functionality intact.
 
 ### Manual
 ```bash
@@ -62,7 +62,7 @@ export SINGULARITY_PAT="sgl_pat_..."
 
 ## Documentation
 
-📖 [Full Documentation](https://studio.x402layer.cc/docs/agentic-access/openclaw-skill)
+📖 [Full Documentation](https://docs.x402layer.cc/agentic-access/openclaw-skill)
 
 ## Scripts
 
@@ -100,7 +100,7 @@ export SINGULARITY_PAT="sgl_pat_..."
 ## Resources
 
 - 📦 **Skill Manifest:** [api.x402layer.cc/skill/x402-layer](https://api.x402layer.cc/skill/x402-layer)
-- 📖 **Documentation:** [studio.x402layer.cc/docs](https://studio.x402layer.cc/docs/agentic-access/openclaw-skill)
+- 📖 **Documentation:** [docs.x402layer.cc](https://docs.x402layer.cc/agentic-access/openclaw-skill)
 - 🌐 **x402 Studio:** [studio.x402layer.cc](https://studio.x402layer.cc)
 - 🐦 **OpenClaw:** [@openclaw](https://x.com/openclaw)
 
@@ -109,6 +109,11 @@ export SINGULARITY_PAT="sgl_pat_..."
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.10.1
+- **Metadata:** explicitly declares the sensitive optional credential classes used across signing, endpoint management, PAT-backed MCP, support auth, and OWS flows
+- **Safety:** strengthens least-privilege guidance so operators set only the minimum env vars required for a chosen runbook
+- **Docs:** updates skill documentation links to `https://docs.x402layer.cc/agentic-access/openclaw-skill`
+
 ### v1.10.0
 - **OWS:** added optional OpenWallet / OWS support through a dedicated `ows_cli.py` wrapper
 - **OWS:** documented install, wallet, pay, discover, sign-message, and agent-key flows
