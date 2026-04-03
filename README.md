@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.9.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.10.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.9.1` hardens the XMTP helper, adds explicit World AgentKit and XMTP runbooks, and keeps optional Singularity MCP guidance in the same install surface.
+> `v1.10.0` adds optional OpenWallet / OWS support for pay/discover/sign-message flows while keeping private-key and AWAL flows intact.
 
 ### Manual
 ```bash
@@ -50,6 +50,11 @@ python ~/.agent/skills/x402-layer/scripts/pay_base.py https://api.x402layer.cc/e
 
 # Browse marketplace
 python ~/.agent/skills/x402-layer/scripts/discover_marketplace.py
+
+# Optional OpenWallet / OWS backend
+npm install -g @open-wallet-standard/core
+export OWS_WALLET="hackathon-wallet"
+python ~/.agent/skills/x402-layer/scripts/ows_cli.py pay-url https://api.x402layer.cc/e/weather-data --wallet hackathon-wallet
 
 # Optional owner-scoped MCP access
 export SINGULARITY_PAT="sgl_pat_..."
@@ -84,6 +89,7 @@ export SINGULARITY_PAT="sgl_pat_..."
 | `list_agents.py` | List wallet-owned ERC-8004 / Solana-8004 agents |
 | `update_agent.py` | Update ERC-8004 / Solana-8004 metadata, visibility, and endpoint bindings |
 | `submit_feedback.py` | Submit on-chain reputation feedback |
+| `ows_cli.py` | Run OpenWallet / OWS wallet, pay, discover, sign-message, and agent-key commands |
 
 > **Security Note:** When you create an endpoint, you will receive an **API Key**. You **must** save this key and configure your origin server to verify the `x-api-key` header in incoming requests. This ensures only paying users (proxied via x402) can access your API.
 
@@ -103,6 +109,11 @@ export SINGULARITY_PAT="sgl_pat_..."
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.10.0
+- **OWS:** added optional OpenWallet / OWS support through a dedicated `ows_cli.py` wrapper
+- **OWS:** documented install, wallet, pay, discover, sign-message, and agent-key flows
+- **Safety:** kept private-key and AWAL flows unchanged while shipping OWS as an optional-first backend
+
 ### v1.9.1
 - **XMTP:** removed the environment-driven Studio base override from `xmtp_support.mjs`
 - **Runbooks:** added explicit World AgentKit, XMTP support, and MCP owner-scoped examples
