@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.10.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.10.2-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.10.1` hardens metadata/safety disclosures for credentialed wallet flows and updates the docs link, while keeping all x402-layer functionality intact.
+> `v1.10.2` removes globally-required secret metadata so the package no longer overstates credential requirements, while keeping all x402-layer functionality intact.
 
 ### Manual
 ```bash
@@ -109,10 +109,10 @@ export SINGULARITY_PAT="sgl_pat_..."
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
-### v1.10.1
-- **Metadata:** explicitly declares the sensitive optional credential classes used across signing, endpoint management, PAT-backed MCP, support auth, and OWS flows
-- **Safety:** strengthens least-privilege guidance so operators set only the minimum env vars required for a chosen runbook
-- **Docs:** updates skill documentation links to `https://docs.x402layer.cc/agentic-access/openclaw-skill`
+### v1.10.2
+- **Metadata:** removed globally-required secret env declarations so the package no longer implies every sensitive credential is required for install or baseline use
+- **Safety:** kept least-privilege guidance in the skill body, clarifying that read-only discovery needs no secrets and credentialed flows are separate optional capability paths
+- **Docs:** keeps the canonical docs link on `https://docs.x402layer.cc/agentic-access/openclaw-skill`
 
 ### v1.10.0
 - **OWS:** added optional OpenWallet / OWS support through a dedicated `ows_cli.py` wrapper
