@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.10.4-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.10.5-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.10.4` removes runtime npx fallback from OWS helpers while keeping the broader OWS wallet-auth support and all existing x402-layer functionality intact.
+> `v1.10.5` keeps the runtime hardening from v1.10.4 and improves transparency that secret-bearing flows are optional capability paths, while read-only discovery needs no secrets.
 
 ### Manual
 ```bash
