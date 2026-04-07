@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.10.5-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.10.6-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.10.5` keeps the runtime hardening from v1.10.4 and improves transparency that secret-bearing flows are optional capability paths, while read-only discovery needs no secrets.
+> `v1.10.6` adds explicit Studio seller webhook signing guidance, documents the two-secret-hop settlement model, and keeps secret-bearing actions scoped to the exact runbook that needs them.
 
 ### Manual
 ```bash
@@ -109,6 +109,11 @@ export SINGULARITY_PAT="sgl_pat_..."
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.10.6
+- **Webhooks:** documented signed seller webhook headers (`X-X402-Signature`, `X-X402-Timestamp`, `X-X402-Event`, `X-X402-Event-Id`) and the exact `timestamp.rawBody` HMAC model
+- **Safety:** separated Studio webhook `signing_secret` from app-internal settlement secrets and added rotation / legacy-fallback guidance
+- **Clarity:** tightened credential-path wording so discovery stays no-secret and privileged actions only use the exact credentials the chosen runbook needs
+
 ### v1.10.3
 - **OWS:** extended OWS support to wallet-auth list/support flows through the shared EVM and Solana helpers
 - **Guardrails:** added explicit runtime messages that deep ERC-8004 registration and on-chain update transactions still require direct signing keys
