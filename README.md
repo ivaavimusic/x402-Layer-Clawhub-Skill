@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.11.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.11.1-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.11.0` keeps the Studio webhook hardening guidance and adds direct fundraiser campaign management through owner-linked dashboard API keys alongside the PAT-backed MCP path.
+> `v1.11.1` keeps the Studio webhook hardening guidance and adds direct fundraiser campaign management through owner-linked dashboard API keys alongside the PAT-backed MCP path.
 
 ### Manual
 ```bash
@@ -114,7 +114,7 @@ python ~/.agent/skills/x402-layer/scripts/manage_campaign.py list
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
-### v1.11.0
+### v1.11.1
 - **Fundraisers:** direct worker campaign management now supports owner-linked dashboard API keys
 - **Skilling:** added `manage_campaign.py` and documented the direct API-key lane alongside PAT-backed MCP
 - **Clarity:** distinguished PAT-backed MCP control from direct `X-API-Key` worker management
