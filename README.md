@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.10.6-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.11.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -27,7 +27,7 @@ x402 is a **Web3 payment layer** enabling AI agents to:
 curl -fsSL https://api.x402layer.cc/skill/x402-layer/install | bash
 ```
 
-> `v1.10.6` adds explicit Studio seller webhook signing guidance, documents the two-secret-hop settlement model, and keeps secret-bearing actions scoped to the exact runbook that needs them.
+> `v1.11.0` keeps the Studio webhook hardening guidance and adds direct fundraiser campaign management through owner-linked dashboard API keys alongside the PAT-backed MCP path.
 
 ### Manual
 ```bash
@@ -58,6 +58,10 @@ python ~/.agent/skills/x402-layer/scripts/ows_cli.py pay-url https://api.x402lay
 
 # Optional owner-scoped MCP access
 export SINGULARITY_PAT="sgl_pat_..."
+
+# Optional direct dashboard API-key access
+export X_API_KEY="x402_..."
+python ~/.agent/skills/x402-layer/scripts/manage_campaign.py list
 ```
 
 ## Documentation
@@ -78,6 +82,7 @@ export SINGULARITY_PAT="sgl_pat_..."
 | `support_threads.py` | Open/list/show/close/reopen support threads |
 | `xmtp_support.mjs` | Read/send XMTP support messages and revoke old installations |
 | `create_endpoint.py` | Deploy monetized endpoint ($1) |
+| `manage_campaign.py` | List/create/update fundraiser campaigns |
 | `manage_endpoint.py` | View/update endpoints |
 | `topup_endpoint.py` | Recharge endpoint credits |
 | `list_on_marketplace.py` | List/unlist from marketplace |
@@ -109,10 +114,10 @@ export SINGULARITY_PAT="sgl_pat_..."
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
-### v1.10.6
-- **Webhooks:** documented signed seller webhook headers (`X-X402-Signature`, `X-X402-Timestamp`, `X-X402-Event`, `X-X402-Event-Id`) and the exact `timestamp.rawBody` HMAC model
-- **Safety:** separated Studio webhook `signing_secret` from app-internal settlement secrets and added rotation / legacy-fallback guidance
-- **Clarity:** tightened credential-path wording so discovery stays no-secret and privileged actions only use the exact credentials the chosen runbook needs
+### v1.11.0
+- **Fundraisers:** direct worker campaign management now supports owner-linked dashboard API keys
+- **Skilling:** added `manage_campaign.py` and documented the direct API-key lane alongside PAT-backed MCP
+- **Clarity:** distinguished PAT-backed MCP control from direct `X-API-Key` worker management
 
 ### v1.10.3
 - **OWS:** extended OWS support to wallet-auth list/support flows through the shared EVM and Solana helpers
