@@ -108,6 +108,29 @@ A normal monetized endpoint can be:
 
 You only need separate endpoints when you want different pricing, isolated accounting, or different fulfillment logic.
 
+## Passing Custom Data Through Payments
+
+Append query parameters to any payment URL and they will appear in the webhook `metadata` field after payment succeeds.
+
+### Hosted pay page
+```
+https://studio.x402layer.cc/pay/credits/my-api?order_id=abc-123&plan=pro
+```
+
+### Direct endpoint
+```
+https://api.x402layer.cc/e/my-api?factory_payment_id=f1ee6b40-...
+```
+
+### Embed / iframe
+When building payment links in embedded components, append query params to the endpoint URL the component navigates to. The params survive through the full payment flow.
+
+### Correlation
+
+Use `?client_reference_id=<your-id>` for a dedicated top-level field in the webhook, or use any custom param name for passthrough into `metadata`.
+
+See `references/webhooks-verification.md` for the full payload schema, supported patterns, reserved params, and limits.
+
 ## Fulfillment Patterns
 
 ### Pattern 1: Server-side webhook unlock
@@ -166,6 +189,7 @@ If the user asks for the "best default" path:
 ## Minimal Launch Checklist
 
 - endpoint or product created
+- API schema attached (if your origin has multiple routes/params)
 - origin verifies `x-api-key` when using endpoints
 - webhook configured
 - signing secret stored securely
