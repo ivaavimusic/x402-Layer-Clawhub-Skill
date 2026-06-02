@@ -141,6 +141,12 @@ def _send_evm_contract_tx(
     checksum_wallet = Web3.to_checksum_address(wallet_address)
     checksum_contract = Web3.to_checksum_address(contract_address)
     contract = w3.eth.contract(address=checksum_contract, abi=abi)
+    # Harden dynamic dispatch: only allow real, simple-named ABI functions
+    # (never dunder/arbitrary attributes), even though function_name comes from
+    # the trusted platform API. Constrains attribute access to known methods.
+    abi_functions = {f.get("name") for f in abi if isinstance(f, dict) and f.get("type") == "function"}
+    if not function_name.isidentifier() or function_name.startswith("_") or function_name not in abi_functions:
+        raise ValueError(f"Refusing dynamic call to non-ABI contract function: {function_name!r}")
     contract_fn = getattr(contract.functions, function_name)(*args)
 
     nonce = w3.eth.get_transaction_count(checksum_wallet)

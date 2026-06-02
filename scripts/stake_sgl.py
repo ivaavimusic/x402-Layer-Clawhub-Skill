@@ -105,6 +105,15 @@ def _post(path: str, body: dict) -> dict:
 def _prepare_sign_submit(prepare_path: str, body: dict) -> None:
     """POST a prepare endpoint, sign each returned tx, submit it."""
     keypair = _load_keypair()
+    # Explicit warning before signing/submitting an on-chain transaction that
+    # moves $SGL / changes your stake. Review the action before running.
+    print(
+        f"⚠️  This will SIGN and SUBMIT an on-chain Solana transaction "
+        f"({prepare_path.rsplit('/', 1)[-1]}) from wallet {keypair.pubkey()}. "
+        f"It moves $SGL / changes your stake and cannot be undone. "
+        f"Set SGL_STAKING_URL only to a trusted host.",
+        file=sys.stderr,
+    )
     prep = _post(prepare_path, body)
     txs = prep.get("transactions", [])
     if not txs:

@@ -232,6 +232,33 @@ Reject requests when missing/invalid.
 - Consumption: 1 credit per request
 - If credits hit 0, endpoint stops serving until recharged
 
+### Safety: actions that spend, sign, or are irreversible
+
+This skill can move funds, sign blockchain transactions, and change account
+resources. **Review the action before running it**, and prefer low-balance or
+delegated wallets and scoped keys.
+
+- **Spends funds / pays:** `pay_base.py`, `pay_solana.py`, `recharge_credits.py`,
+  `topup_endpoint.py`, `consume_product.py`, `consume_credits.py`. These build
+  and submit a payment after a 402 challenge — confirm the amount and the
+  destination URL first.
+- **Signs / submits on-chain transactions:** `register_agent.py`,
+  `update_agent.py`, `submit_feedback.py`, `stake_sgl.py`, `ows_cli.py sign-message`.
+  Only point them at trusted base URLs; a prepared transaction from an untrusted
+  host could authorize unintended state changes.
+- **Irreversible / account-scoped:** `manage_endpoint.py` delete, `manage_webhook.py remove`,
+  and `xmtp_support.mjs revoke-others` (revokes other XMTP installations). Double-check before running.
+
+Guidance:
+- Use a **dedicated, low-balance / delegated wallet** and **scoped** API keys/PATs.
+- **Never** paste private keys into chats, logs, or shared/CI terminals; scripts
+  read secrets only from explicit env vars and never auto-load `.env`.
+- Endpoint creation returns a **public** gateway URL and a **sensitive** API key
+  (used for origin verification) — treat the key as a secret and expect the URL
+  to be publicly reachable.
+- Wallet addresses are public but still privacy-sensitive — they link your
+  on-chain activity. The skill only sends them to the configured x402 host.
+
 ---
 
 ## Fast Runbooks
