@@ -1,6 +1,6 @@
 ---
 name: x402-layer
-version: 1.13.0
+version: 1.14.0
 description: |
   x402-layer helps agents pay for APIs with USDC, deploy monetized endpoints,
   manage credits/webhooks/marketplace listings, and handle wallet-first ERC-8004 registration/discovery/management/reputation on Base, Ethereum, Polygon, BSC, Monad, and Solana. Optional credentialed flows may use private keys, Solana signer keys, endpoint API keys, PATs, AWAL, or OWS depending on the exact runbook; read-only discovery requires no secrets.
@@ -22,6 +22,10 @@ description: |
   "openwallet.sh", or use optional Singularity MCP
   access with a dashboard PAT to manage x402 Singularity Layer operations
   on Base, Ethereum, Polygon, BSC, Monad, or Solana networks.
+  Also use this skill to stake $SGL agentically: "stake SGL", "stake $SGL",
+  "unstake SGL", "claim staking rewards", "check my staking position",
+  "stake to run a node", "agentic staking" — sign and submit on-chain Solana
+  staking transactions with a wallet keypair.
 homepage: https://docs.x402layer.cc/agentic-access/openclaw-skill
 metadata:
   clawdbot:
@@ -83,6 +87,7 @@ Use this routing first, then load the relevant reference doc.
 | Human-backed agent wallet benefits (World AgentKit) | `pay_base.py`, `discover_marketplace.py` | `references/agentkit-benefits.md` |
 | Support and buyer/seller messaging | `support_auth.py`, `support_threads.py`, `xmtp_support.mjs` | `references/xmtp-support.md` |
 | Use OpenWallet / OWS as an optional wallet backend | `ows_cli.py` | `references/openwallet-ows.md`, `references/pay-per-request.md`, `references/payment-signing.md` |
+| Stake/unstake/claim $SGL, read staking position/analytics | `stake_sgl.py` | `references/staking.md` |
 
 ---
 
@@ -203,6 +208,11 @@ Risk note: this skill can sign messages, submit transactions, and call x402/stud
 | `list_my_endpoints.py` | List platform endpoints that can be linked to ERC-8004 agents |
 | `update_agent.py` | Update existing ERC-8004/Solana-8004 agent metadata, visibility, and endpoint bindings |
 | `submit_feedback.py` | Submit on-chain reputation feedback |
+
+### Staking
+| Script | Purpose |
+|---|---|
+| `stake_sgl.py` | Agentic $SGL staking: stake / unstake / claim-unstake / claim rewards, and read positions + analytics. Non-custodial prepare→sign→submit with `SOLANA_SECRET_KEY`. See `references/staking.md`. |
 
 ---
 
