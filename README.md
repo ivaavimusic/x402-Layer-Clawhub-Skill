@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.11.1-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.16.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -114,6 +114,9 @@ python ~/.agent/skills/x402-layer/scripts/manage_campaign.py list
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.16.0
+- **Laso Finance:** new `references/laso-spend.md`: spend USDC in the real world (prepaid cards, gift cards, payouts to debit card, Venmo, PayPal, bank) from the agent's own wallet with SIGN-IN-WITH-X and x402 v2. Never a Laso API key, never platform credits; confirm the fee-inclusive total first; card numbers stay secret
+
 ### v1.11.1
 - **Fundraisers:** direct worker campaign management now supports owner-linked dashboard API keys
 - **Skilling:** added `manage_campaign.py` and documented the direct API-key lane alongside PAT-backed MCP

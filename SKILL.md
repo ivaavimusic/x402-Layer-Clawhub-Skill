@@ -1,6 +1,6 @@
 ---
 name: x402-layer
-version: 1.15.1
+version: 1.16.0
 description: |
   x402-layer helps agents pay for APIs with USDC, deploy monetized endpoints,
   manage credits/webhooks/marketplace listings, and handle wallet-first ERC-8004 registration/discovery/management/reputation on Base, Ethereum, Polygon, BSC, Monad, and Solana. Optional credentialed flows may use private keys, Solana signer keys, endpoint API keys, PATs, AWAL, or OWS depending on the exact runbook; read-only discovery requires no secrets.
@@ -26,6 +26,9 @@ description: |
   "unstake SGL", "claim staking rewards", "check my staking position",
   "stake to run a node", "agentic staking" — sign and submit on-chain Solana
   staking transactions with a wallet keypair.
+  Also use it to spend USDC in the real world via Laso Finance from the agent's
+  own wallet: "get a prepaid card with USDC", "buy a gift card with USDC",
+  "send USDC to Venmo / PayPal / a debit card / a bank account".
 homepage: https://docs.x402layer.cc/agentic-access/openclaw-skill
 metadata:
   clawdbot:
@@ -88,6 +91,7 @@ Use this routing first, then load the relevant reference doc.
 | Support and buyer/seller messaging | `support_auth.py`, `support_threads.py`, `xmtp_support.mjs` | `references/xmtp-support.md` |
 | Use OpenWallet / OWS as an optional wallet backend | `ows_cli.py` | `references/openwallet-ows.md`, `references/pay-per-request.md`, `references/payment-signing.md` |
 | Stake/unstake/claim $SGL, read staking position/analytics | `stake_sgl.py` | `references/staking.md` |
+| Spend USDC in the real world (prepaid card, gift card, payout to debit card / Venmo / PayPal / bank) via Laso Finance | Agent's own wallet: sign in with `SIGN-IN-WITH-X`, pay with x402 v2 (`PAYMENT-SIGNATURE`). Not `pay_base.py` (v1). Never a Laso API key, never platform credits | `references/laso-spend.md` |
 
 ---
 
@@ -504,6 +508,8 @@ Load only what is needed for the user task:
   optional OpenWallet / OWS wallet backend guidance, install commands, and current scope.
 - `references/payment-signing.md`:
   exact signing domains/types/header payload details.
+- `references/laso-spend.md`:
+  spend USDC in the real world via Laso Finance (prepaid cards, gift cards, payouts) from the agent's own wallet, with the confirm-first and card-secrecy rules.
 
 ---
 
