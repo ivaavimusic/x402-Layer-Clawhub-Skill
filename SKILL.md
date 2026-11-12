@@ -597,7 +597,7 @@ Choose the smallest path that fits the task:
 - MCP docs: https://studio.x402layer.cc/docs/agentic-access/mcp-server
 - SDK docs: https://studio.x402layer.cc/docs/developer/sdk-receipts
 - GitHub docs repo: https://github.com/ivaavimusic/SGL_DOCS_2025
-- x402 Studio: https://studio.x402layer.cc
+- Singularity Studio: https://studio.x402layer.cc
 
 ---
 
