@@ -3,7 +3,7 @@
 ⚡ **x402 Singularity Layer** - Agentic payment infrastructure for AI agents.
 
 [![Distribution](https://img.shields.io/badge/distribution-self--hosted-blue)](https://api.x402layer.cc/skill/x402-layer)
-[![Version](https://img.shields.io/badge/version-1.16.0-green)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.17.0-green)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-purple)](./LICENSE)
 
 ## What is x402-Layer?
@@ -114,6 +114,12 @@ python ~/.agent/skills/x402-layer/scripts/manage_campaign.py list
 MIT © [EventHorizon Labs](https://ehlabs.xyz)
 
 ## Changelog
+### v1.17.0
+- **x402 v2:** paying scripts read the v2 `PAYMENT-REQUIRED` header first and pay with `PAYMENT-SIGNATURE`; without it they pay v1 `X-Payment` exactly as before (`X402_WIRE=v1` forces v1). Base and Solana.
+- **Shared helper:** new `scripts/x402_wire.py` (standard library only), byte-identical to the official @x402/core encoding
+- **Safety:** after a payment is sent, a timeout, 202 or 5xx is reported as `pending: true`, never a reason to sign again
+- **consume_product.py:** buys from the live product route `api.x402layer.cc/p/<slug>` with the standard 402 challenge (Base or Solana); the old raw-JSON `X-Payment` and the retired `/storage/product/` path are gone
+
 ### v1.11.1
 - **Fundraisers:** direct worker campaign management now supports owner-linked dashboard API keys
 - **Skilling:** added `manage_campaign.py` and documented the direct API-key lane alongside PAT-backed MCP

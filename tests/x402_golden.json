@@ -1,0 +1,127 @@
+{
+  "generatedBy": "@x402/core 2.32.0",
+  "paymentRequired": {
+    "value": {
+      "x402Version": 2,
+      "error": "Payment required",
+      "resource": {
+        "url": "https://api.x402layer.cc/e/demo",
+        "description": "Démo endpoint ✓ (utf-8)",
+        "mimeType": "application/json"
+      },
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "amount": "2010000",
+          "payTo": "0x1111111111111111111111111111111111111111",
+          "maxTimeoutSeconds": 3600,
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "amount": "1",
+          "payTo": "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin",
+          "maxTimeoutSeconds": 3600,
+          "extra": {
+            "feePayer": "2wKupLR9q6wXYppw8Gr2NvWxKBUqm4PPJKkQfoxHDBg4"
+          }
+        }
+      ],
+      "extensions": {
+        "bazaar": {
+          "info": {
+            "input": {
+              "type": "http",
+              "method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "header": "eyJ4NDAyVmVyc2lvbiI6MiwiZXJyb3IiOiJQYXltZW50IHJlcXVpcmVkIiwicmVzb3VyY2UiOnsidXJsIjoiaHR0cHM6Ly9hcGkueDQwMmxheWVyLmNjL2UvZGVtbyIsImRlc2NyaXB0aW9uIjoiRMOpbW8gZW5kcG9pbnQg4pyTICh1dGYtOCkiLCJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSwiYWNjZXB0cyI6W3sic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJhc3NldCI6IjB4ODMzNTg5ZkNENmVEYjZFMDhmNGM3QzMyRDRmNzFiNTRiZEEwMjkxMyIsImFtb3VudCI6IjIwMTAwMDAiLCJwYXlUbyI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSIsIm1heFRpbWVvdXRTZWNvbmRzIjozNjAwLCJleHRyYSI6eyJuYW1lIjoiVVNEIENvaW4iLCJ2ZXJzaW9uIjoiMiJ9fSx7InNjaGVtZSI6ImV4YWN0IiwibmV0d29yayI6InNvbGFuYTo1ZXlrdDRVc0Z2OFA4TkpkVFJFcFkxdnpxS3FaS3ZkcCIsImFzc2V0IjoiRVBqRldkZDVBdWZxU1NxZU0ycU4xeHp5YmFwQzhHNHdFR0drWnd5VER0MXYiLCJhbW91bnQiOiIxIiwicGF5VG8iOiI5eFFlV3ZHODE2YlV4OUVQakhtYVQyM3l2Vk0yWldicnJwWmI5UHVzVkZpbiIsIm1heFRpbWVvdXRTZWNvbmRzIjozNjAwLCJleHRyYSI6eyJmZWVQYXllciI6IjJ3S3VwTFI5cTZ3WFlwcHc4R3IyTnZXeEtCVXFtNFBQSktrUWZveEhEQmc0In19XSwiZXh0ZW5zaW9ucyI6eyJiYXphYXIiOnsiaW5mbyI6eyJpbnB1dCI6eyJ0eXBlIjoiaHR0cCIsIm1ldGhvZCI6IkdFVCJ9fX19fQ=="
+  },
+  "evmPayload": {
+    "value": {
+      "x402Version": 2,
+      "resource": {
+        "url": "https://api.x402layer.cc/e/demo",
+        "description": "Démo endpoint ✓ (utf-8)",
+        "mimeType": "application/json"
+      },
+      "accepted": {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "amount": "2010000",
+        "payTo": "0x1111111111111111111111111111111111111111",
+        "maxTimeoutSeconds": 3600,
+        "extra": {
+          "name": "USD Coin",
+          "version": "2"
+        }
+      },
+      "payload": {
+        "signature": "0xababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+        "authorization": {
+          "from": "0x2222222222222222222222222222222222222222",
+          "to": "0x1111111111111111111111111111111111111111",
+          "value": "2010000",
+          "validAfter": "0",
+          "validBefore": "1900000000",
+          "nonce": "0x0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f"
+        }
+      }
+    },
+    "header": "eyJ4NDAyVmVyc2lvbiI6MiwicmVzb3VyY2UiOnsidXJsIjoiaHR0cHM6Ly9hcGkueDQwMmxheWVyLmNjL2UvZGVtbyIsImRlc2NyaXB0aW9uIjoiRMOpbW8gZW5kcG9pbnQg4pyTICh1dGYtOCkiLCJtaW1lVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSwiYWNjZXB0ZWQiOnsic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoiZWlwMTU1Ojg0NTMiLCJhc3NldCI6IjB4ODMzNTg5ZkNENmVEYjZFMDhmNGM3QzMyRDRmNzFiNTRiZEEwMjkxMyIsImFtb3VudCI6IjIwMTAwMDAiLCJwYXlUbyI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSIsIm1heFRpbWVvdXRTZWNvbmRzIjozNjAwLCJleHRyYSI6eyJuYW1lIjoiVVNEIENvaW4iLCJ2ZXJzaW9uIjoiMiJ9fSwicGF5bG9hZCI6eyJzaWduYXR1cmUiOiIweGFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWJhYmFiYWIiLCJhdXRob3JpemF0aW9uIjp7ImZyb20iOiIweDIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIiLCJ0byI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSIsInZhbHVlIjoiMjAxMDAwMCIsInZhbGlkQWZ0ZXIiOiIwIiwidmFsaWRCZWZvcmUiOiIxOTAwMDAwMDAwIiwibm9uY2UiOiIweDBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYwZjBmMGYifX19"
+  },
+  "svmPayload": {
+    "value": {
+      "x402Version": 2,
+      "accepted": {
+        "scheme": "exact",
+        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "amount": "1",
+        "payTo": "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin",
+        "maxTimeoutSeconds": 3600,
+        "extra": {
+          "feePayer": "2wKupLR9q6wXYppw8Gr2NvWxKBUqm4PPJKkQfoxHDBg4"
+        }
+      },
+      "payload": {
+        "transaction": "AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=="
+      }
+    },
+    "header": "eyJ4NDAyVmVyc2lvbiI6MiwiYWNjZXB0ZWQiOnsic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoic29sYW5hOjVleWt0NFVzRnY4UDhOSmRUUkVwWTF2enFLcVpLdmRwIiwiYXNzZXQiOiJFUGpGV2RkNUF1ZnFTU3FlTTJxTjF4enliYXBDOEc0d0VHR2tad3lURHQxdiIsImFtb3VudCI6IjEiLCJwYXlUbyI6Ijl4UWVXdkc4MTZiVXg5RVBqSG1hVDIzeXZWTTJaV2JycnBaYjlQdXNWRmluIiwibWF4VGltZW91dFNlY29uZHMiOjM2MDAsImV4dHJhIjp7ImZlZVBheWVyIjoiMndLdXBMUjlxNndYWXBwdzhHcjJOdld4S0JVcW00UFBKS2tRZm94SERCZzQifX0sInBheWxvYWQiOnsidHJhbnNhY3Rpb24iOiJBUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRPT0ifX0="
+  },
+  "settleOk": {
+    "value": {
+      "success": true,
+      "transaction": "0xcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "network": "eip155:8453",
+      "payer": "0x2222222222222222222222222222222222222222",
+      "extensions": {
+        "sgl-receipt": {
+          "token": "r.e.c"
+        }
+      }
+    },
+    "header": "eyJzdWNjZXNzIjp0cnVlLCJ0cmFuc2FjdGlvbiI6IjB4Y2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZGNkY2RjZCIsIm5ldHdvcmsiOiJlaXAxNTU6ODQ1MyIsInBheWVyIjoiMHgyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyIiwiZXh0ZW5zaW9ucyI6eyJzZ2wtcmVjZWlwdCI6eyJ0b2tlbiI6InIuZS5jIn19fQ=="
+  },
+  "settlePending": {
+    "value": {
+      "success": false,
+      "errorReason": "settlement_pending",
+      "transaction": "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555",
+      "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+    },
+    "header": "eyJzdWNjZXNzIjpmYWxzZSwiZXJyb3JSZWFzb24iOiJzZXR0bGVtZW50X3BlbmRpbmciLCJ0cmFuc2FjdGlvbiI6IjU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTUiLCJuZXR3b3JrIjoic29sYW5hOjVleWt0NFVzRnY4UDhOSmRUUkVwWTF2enFLcVpLdmRwIn0="
+  }
+}
